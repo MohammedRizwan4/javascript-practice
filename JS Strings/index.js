@@ -129,7 +129,7 @@ newstr;
     console.log([text[0], text[1], text[2]])
     console.log([...text])
     console.log(...text)
-    console.log({...text})
+    console.log({ ...text })
     text[0] = 2;
     console.log(text[0])  // no difff
     console.log(text)
@@ -146,4 +146,88 @@ newstr;
 
 
 // String search
+
+{
+    let text = "Please locate where 'locate' occurs!";
+    let index = text.indexOf("locate");
+    index
+}
+
+{
+    let text = "Please locate where 'locate' occurs!";
+    let index = text.lastIndexOf("locate");
+    index
+}
+
+{
+    let text = "Please locate where 'locate' occurs!";
+    let index = text.indexOf("locate", 15);  // starting position 
+    // here no regular expression
+    index
+}
+
+{
+    let text = "Please locate where 'locate' occurs!";
+    console.log(text.search("locate"))
+    console.log(text.search(/locate/))  // here no starting position
+}
+
+{
+    let text = "The rain in SPAIN stays mainly in the plain";
+    console.log(text.match("ain"))
+}
+
+{
+    let text = "The rain in SPAIN stays mainly in the plain";
+    console.log(text.match(/ain/))
+}
+
+{
+    let text = "The rain in SPAIN stays mainly in the plain";
+    console.log(text.match(/ain/g))
+}
+
+{
+    let text = "The rain in SPAIN stays mainly in the plain";
+    console.log(text.match(/ain/gi))
+}
+
+{
+    let text = "I love cats. Cats are very easy to love. Cats are very popular."
+    const iterator = text.matchAll("Cats");
+    console.log(Array.from(iterator))
+}
+
+{
+    let text = "I love cats. Cats are very easy to love. Cats are very popular."
+    const iterator = text.matchAll(/Cats/g);
+    console.log(Array.from(iterator))
+}
+
+{
+    let text = "I love cats. Cats are very easy to love. Cats are very popular."
+    const iterator = text.matchAll(/Cats/gi);
+    console.log(Array.from(iterator)[0])  // problem with index
+}
+
+{
+    let text = "Hello world, welcome to the universe.";
+    console.log(text.includes("world"))
+    console.log(text.includes("world", 12)) // starting position
+}
+
+{
+    let text = "Hello world, welcome to the universe.";
+    console.log(text.startsWith("Hello"))
+    console.log(text.startsWith("world", 6))
+}
+
+{
+    let text = "Hello world, welcome to the universe.";
+    console.log(text.endsWith("universe"))
+    console.log(text.endsWith("the", 27))  // first 27 ends with "the"?
+}
+
+
+
 
